@@ -1,0 +1,24 @@
+<div class="container-search">
+    <p class="container-search__title">Ricerca sample</p>
+    <form class="container-search__form" (ngSubmit)="searchSample()">
+        <mat-form-field appearance="outline">
+          <mat-label>Inserisci il nome</mat-label>
+          <input type="search" matInput placeholder="Cerca un sample" [formControl]="search">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">CERCA</button>
+    </form>
+</div>
+<div class="container-sample">
+    <div class="container-sample__header">
+        <div class="container-sample__header__title">
+            <h1>Lista sample</h1>
+        </div>
+        <div *ngIf="isAdmin" class="container-sample__header__add-sample" (click)="addSample()">
+            <mat-icon>add</mat-icon>
+            <p>Aggiungi sample</p>
+        </div>
+    </div>
+    <div class="container-sample__container-list">
+        <app-table [dataSource]="samples.items" [displayedColumns]="displayedColumns" [isAdmin]="isAdmin" (isDelete)="deleteSample($event)" (isEdit)="editSample($event)"></app-table>
+    </div>
+</div>

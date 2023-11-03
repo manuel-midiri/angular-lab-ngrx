@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Aggiungi un test</h2>
+<div mat-dialog-content>
+    <p>Riempi il modulo sottostante per agigungere un test alla lista</p>
+    <div class="container-form">
+        <form [formGroup]="createTestForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input type="text" matInput formControlName="name" required>
+                <mat-error *ngIf="createTestForm.get('name')?.invalid && (createTestForm.get('name')?.dirty || createTestForm.get('name')?.touched)">
+                    Inserisci un nome
+                  </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+</div>
+<div class="container-button" mat-dialog-actions>
+  <button class="container-button__cancel" mat-button mat-dialog-close cdkFocusInitial>Annulla</button>
+  <button class="container-button__success" mat-button (click)="onClick()">Invia</button>
+</div>

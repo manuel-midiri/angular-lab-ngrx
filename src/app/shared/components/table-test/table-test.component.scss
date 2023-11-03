@@ -1,0 +1,33 @@
+.container-table {
+  max-height: 380px;
+  overflow: auto;
+  position: relative;
+  border-radius: 10px;
+  table {
+    width: 100%;
+    height: 100%;
+
+    td {
+      padding: 10px 16px;
+    }
+  }
+  
+  mat-icon {
+    margin: 0 8px;
+    cursor: pointer;
+    color: #2f2f2f;
+    transition: all .2s ease;
+
+    &:hover {
+        color: #bfd8bd;
+    }
+  }
+  
+  &__no-results {
+    padding: 20px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+  }
+
+}

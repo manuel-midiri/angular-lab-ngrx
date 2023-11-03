@@ -1,0 +1,51 @@
+.container-form {
+    height: calc(100% - 62px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &__title {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 30px;
+        font-weight: 800;
+        width: 100%;
+        text-align: center;
+        @media (min-width: 990px) {
+            font-size: 40px;
+        }
+    }
+    &__container-form-input {
+
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 250px;
+        background-color: #fff;
+        padding: 60px 40px;
+        border-radius: 10px;
+        border: 2px solid #e2e0e0;
+    
+        @media (min-width: 990px) {
+            width: 500px;
+        }
+    
+        mat-form-field {
+            margin-bottom: 20px;
+        }
+
+        button {
+            color: white;
+            font-size: 16px;
+            padding: 24px 0;
+        }
+
+        .mat-mdc-raised-button {
+            box-shadow: none;
+        }
+        
+    }
+}

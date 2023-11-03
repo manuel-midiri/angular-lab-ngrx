@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Aggiungi un sample</h2>
+<div mat-dialog-content>
+    <p>Riempi il modulo sottostante per agigungere un sample alla lista</p>
+    <div class="container-form">
+        <form [formGroup]="createSampleForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input type="text" matInput formControlName="name" required>
+                <mat-error *ngIf="createSampleForm.get('name')?.invalid && (createSampleForm.get('name')?.dirty || createSampleForm.get('name')?.touched)">
+                    Inserisci un nome
+                  </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Descrizione</mat-label>
+                <textarea matInput placeholder="Inserisci una descrizione..." formControlName="description" required></textarea>
+                <mat-error *ngIf="createSampleForm.get('description')?.invalid && (createSampleForm.get('description')?.dirty || createSampleForm.get('description')?.touched)">
+                    Inserisci una descrizione
+                  </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+</div>
+<div class="container-button" mat-dialog-actions>
+  <button class="container-button__cancel" mat-button mat-dialog-close cdkFocusInitial>Annulla</button>
+  <button class="container-button__success" mat-button (click)="onClick()">Invia</button>
+</div>

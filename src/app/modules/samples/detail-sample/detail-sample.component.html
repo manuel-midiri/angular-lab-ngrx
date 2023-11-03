@@ -1,0 +1,32 @@
+<div class="container-detail-sample">
+    <ng-container *ngIf="sampleDetail">
+        <div class="container-detail-sample__header">
+            <div class="container-detail-sample__header__item">
+                <p class="container-detail-sample__header__item__key">ID: </p>
+                <p class="container-detail-sample__header__item__value">{{ sampleDetail.id }}</p>
+            </div>
+            <div class="container-detail-sample__header__item">
+                <p class="container-detail-sample__header__item__key">Nome: </p>
+                <p class="container-detail-sample__header__item__value">{{ sampleDetail.name }}</p>
+            </div>
+            <div class="container-detail-sample__header__item">
+                <p class="container-detail-sample__header__item__key">Descrizione: </p>
+                <p class="container-detail-sample__header__item__value">{{ sampleDetail.description }}</p>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<div class="container-sample">
+    <div class="container-sample__header">
+        <div class="container-sample__header__title">
+            <h1>Lista test</h1>
+        </div>
+        <div *ngIf="isAdmin" class="container-sample__header__add-sample" (click)="addTest()">
+            <mat-icon>add</mat-icon>
+            <p>Aggiungi test</p>
+        </div>
+    </div>
+    <div class="container-sample__container-list">
+        <app-table-test [dataSource]="testList" [displayedColumns]="displayedColumns" [isAdmin]="isAdmin" (isDelete)="deleteTest($event)" (isEdit)="editTest($event)"></app-table-test>
+    </div>
+</div>
